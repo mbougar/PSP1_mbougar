@@ -28,8 +28,24 @@ namespace PSP1
             
             foreach (var objeto in objetos)
             {
-                Console.WriteLine($" - {objeto.ReturnName()}");
+                Console.WriteLine($" - {objeto}");
             }
+
+            Console.WriteLine($"Stats: Daño({character.BaseDamage}) Armadura({character.BaseArmor})");
+            
+            Console.WriteLine("\nInventario después de quitarle su hacha y su escudo:");
+            
+            character.RemoveItem(axe);
+            character.RemoveItem(shield);
+            
+            List<IItem> objetosAfter = character.ListItems();
+            
+            foreach (var objeto in objetosAfter)
+            {
+                Console.WriteLine($" - {objeto}");
+            }
+            
+            Console.WriteLine($"Stats: Daño({character.BaseDamage}) Armadura({character.BaseArmor})");
 
             Console.ReadKey();
         }

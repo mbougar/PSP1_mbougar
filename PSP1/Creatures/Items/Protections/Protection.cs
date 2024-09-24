@@ -3,7 +3,7 @@ namespace PSP1.Creatures.Items.Protections;
 public abstract class Protection : IItem
 {
     public string Name { get; set; }
-    public int Armor { get; set; }
+    private int Armor { get; set; }
 
     public Protection(string name, int armor)
     {
@@ -11,9 +11,23 @@ public abstract class Protection : IItem
         Armor = armor;
     }
 
-    public abstract void Apply(Character character);
-    public string ReturnName()
+    public void ApplyItemBuff(Character character)
     {
-        return Name;
+        character.BaseArmor += Armor;
+    }
+    
+    public void CancelItemBuff(Character character)
+    {
+        character.BaseArmor -= Armor;
+    }
+
+    public int GetArmor()
+    {
+        return Armor;
+    }
+
+    public override string ToString()
+    {
+        return $"{Name} | Armor: {Armor}";
     }
 }

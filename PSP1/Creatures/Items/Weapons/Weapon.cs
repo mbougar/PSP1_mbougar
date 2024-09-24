@@ -3,7 +3,7 @@ namespace PSP1.Creatures.Items.Weapons;
 public abstract class Weapon : IItem
 {
     public string Name { get; set; }
-    public int Damage { get; set; }
+    private int Damage { get; set; }
 
     public Weapon(string name, int damage)
     {
@@ -11,9 +11,23 @@ public abstract class Weapon : IItem
         Damage = damage;
     }
 
-    public abstract void Apply(Character character);
-    public string ReturnName()
+    public void ApplyItemBuff(Character character)
     {
-        return Name;
+        character.BaseDamage += Damage;
+    }
+    
+    public void CancelItemBuff(Character character)
+    {
+        character.BaseDamage -= Damage;
+    }
+
+    public int GetDamage()
+    {
+        return Damage;
+    }
+
+    public override string ToString()
+    {
+        return $"{Name} | Damage: {Damage}";
     }
 }

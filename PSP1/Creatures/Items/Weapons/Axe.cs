@@ -8,9 +8,4 @@ public class Axe : Weapon
     {
         this.Name = ItemNameGenerator.GenerateItemName(this);
     }
-
-    public override void Apply(Character character)
-    {
-        character.BaseDamage += Damage;
-    }
 }
