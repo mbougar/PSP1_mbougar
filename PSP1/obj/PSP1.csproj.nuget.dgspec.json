@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\manal\\RiderProjects\\PSP1\\PSP1\\PSP1.csproj": {}
+    "C:\\Users\\Manuel\\RiderProjects\\PSP1_mbougar\\PSP1\\PSP1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\manal\\RiderProjects\\PSP1\\PSP1\\PSP1.csproj": {
+    "C:\\Users\\Manuel\\RiderProjects\\PSP1_mbougar\\PSP1\\PSP1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\manal\\RiderProjects\\PSP1\\PSP1\\PSP1.csproj",
+        "projectUniqueName": "C:\\Users\\Manuel\\RiderProjects\\PSP1_mbougar\\PSP1\\PSP1.csproj",
         "projectName": "PSP1",
-        "projectPath": "C:\\Users\\manal\\RiderProjects\\PSP1\\PSP1\\PSP1.csproj",
-        "packagesPath": "C:\\Users\\manal\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\manal\\RiderProjects\\PSP1\\PSP1\\obj\\",
+        "projectPath": "C:\\Users\\Manuel\\RiderProjects\\PSP1_mbougar\\PSP1\\PSP1.csproj",
+        "packagesPath": "C:\\Users\\Manuel\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Manuel\\RiderProjects\\PSP1_mbougar\\PSP1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\manal\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Manuel\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"

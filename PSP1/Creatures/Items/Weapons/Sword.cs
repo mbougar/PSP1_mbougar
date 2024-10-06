@@ -8,9 +8,4 @@ public class Sword : Weapon
     {
         this.Name = ItemNameGenerator.GenerateItemName(this);
     }
-
-    public override void Apply(Character character)
-    {
-        character.BaseDamage += Damage;
-    }
 }

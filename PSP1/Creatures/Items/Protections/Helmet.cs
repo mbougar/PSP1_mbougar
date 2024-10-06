@@ -8,9 +8,4 @@ public class Helmet : Protection
     {
         this.Name = ItemNameGenerator.GenerateItemName(this);
     }
-
-    public override void Apply(Character character)
-    {
-        character.BaseArmor += Armor;
-    }
 }

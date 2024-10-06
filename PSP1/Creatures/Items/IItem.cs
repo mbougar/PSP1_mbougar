@@ -2,7 +2,7 @@ namespace PSP1.Creatures.Items;
 
 public interface IItem
 {
-    void Apply(Character character);
-
-    string ReturnName();
+    void ApplyItemBuff(Character character);
+    
+    void CancelItemBuff(Character character);
 }

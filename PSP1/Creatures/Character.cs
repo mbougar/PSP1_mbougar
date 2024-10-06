@@ -52,7 +52,13 @@ public class Character
     public void AddItem(IItem item)
     {
         _inventory.Add(item);
-        item.Apply(this);
+        item.ApplyItemBuff(this);
+    }
+    
+    public void RemoveItem(IItem item)
+    {
+        _inventory.Remove(item);
+        item.CancelItemBuff(this);
     }
 
     public List<IItem> ListItems()
