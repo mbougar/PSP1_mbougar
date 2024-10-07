@@ -2,24 +2,15 @@ using PSP1.Creatures.Items;
 
 namespace PSP1.Creatures;
 
-public class Character
+public class Character(string name, int maxHitPoints, int baseDamage, int baseArmor)
 {
-    public string Name { get; set; }
-    public int CurrentHitPoints { get; set; }
-    public int MaxHitPoints { get; set; }
-    public int BaseDamage { get; set; }
-    public int BaseArmor { get; set; }
-    private List<IItem> _inventory;
-
-    public Character(string name, int maxHitPoints, int baseDamage, int baseArmor)
-    {
-        Name = name;
-        MaxHitPoints = maxHitPoints;
-        CurrentHitPoints = maxHitPoints;
-        BaseDamage = baseDamage;
-        BaseArmor = baseArmor;
-        _inventory = new List<IItem>();
-    }
+    public string Name { get; set; } = name;
+    public int CurrentHitPoints { get; private set; } = maxHitPoints;
+    public int MaxHitPoints { get; set; } = maxHitPoints;
+    public int BaseDamage { get; set; } = baseDamage;
+    public int BaseArmor { get; set; } = baseArmor;
+    private readonly List<IItem> _inventory = [];
+    public List<Minion> Minions { get; set; } = [];
 
     public int Attack()
     {
@@ -42,7 +33,7 @@ public class Character
 
     public void ReceiveDamage(int damage)
     {
-        int effectiveDamage = damage - BaseArmor;
+        var effectiveDamage = damage - BaseArmor;
         if (effectiveDamage > 0)
         {
             CurrentHitPoints -= effectiveDamage;
@@ -64,5 +55,15 @@ public class Character
     public List<IItem> ListItems()
     {
         return _inventory;
+    }
+    
+    public void AddMinion(Minion minion)
+    {
+        Minions.Add(minion);
+    }
+    
+    public void RemoveMinion(Minion minion)
+    {
+        Minions.Remove(minion);
     }
 }

@@ -1,11 +1,10 @@
 using PSP1.Creatures.Items.Generators;
+using PSP1.Creatures.Items.Perks;
 
 namespace PSP1.Creatures.Items.Weapons;
 
-public class Sword : Weapon
+public class Sword(ItemPerkDelegate? applyPerk = null, ItemPerkDelegate? cancelPerk = null)
+    : Weapon(ItemNameGenerator.GenerateItemName("Weapon", "Sword"), 12, applyPerk, cancelPerk)
 {
-    public Sword() : base("Sword", 12)
-    {
-        this.Name = ItemNameGenerator.GenerateItemName(this);
-    }
+    
 }

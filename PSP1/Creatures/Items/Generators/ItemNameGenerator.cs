@@ -5,31 +5,34 @@ namespace PSP1.Creatures.Items.Generators;
 
 public static class ItemNameGenerator
 {
-    private static Random _random = new Random();
+    private static readonly Random Random = new Random();
 
-    private static string[] _weaponPrefixes = { "Flaming", "Ancient", "Cursed", "Blessed", "Dark", "Glorious", "Frozen", "Sharp", "Mystic" };
-    private static string[] _weaponSuffixes = { "of Power", "of the Phoenix", "of Destruction", "of the Wolf", "of the Dragon", "of Fury", "of Thunder", "of Shadows" };
+    private static readonly string[] WeaponPrefixes = ["Flaming", "Ancient", "Cursed", "Blessed", "Dark", "Glorious", "Frozen", "Sharp", "Mystic"
+    ];
+    private static readonly string[] WeaponSuffixes = ["of Power", "of the Phoenix", "of Destruction", "of the Wolf", "of the Dragon", "of Fury", "of Thunder", "of Shadows"
+    ];
 
-    private static string[] _armorPrefixes = { "Sturdy", "Mystical", "Enchanted", "Heavy", "Holy", "Infernal", "Glorious", "Shadowed", "Iron" };
-    private static string[] _armorSuffixes = { "of Protection", "of Endurance", "of the Bear", "of the Eagle", "of the Lion", "of Speed", "of Vitality", "of Defense" };
+    private static readonly string[] ArmorPrefixes = ["Sturdy", "Mystical", "Enchanted", "Heavy", "Holy", "Infernal", "Glorious", "Shadowed", "Iron"
+    ];
+    private static readonly string[] ArmorSuffixes = ["of Protection", "of Endurance", "of the Bear", "of the Eagle", "of the Lion", "of Speed", "of Vitality", "of Defense"
+    ];
 
-    public static string GenerateItemName(IItem item)
+    public static string GenerateItemName(string type, string itemName)
     {
-        string prefix = "", typeName = "", suffix = "";
+        string prefix = "", suffix = "";
 
-        if (item is Weapon)
+        switch (type)
         {
-            prefix = _weaponPrefixes[_random.Next(_weaponPrefixes.Length)];
-            typeName = item.GetType().Name;
-            suffix = _weaponSuffixes[_random.Next(_weaponSuffixes.Length)];
-        }
-        else if (item is Protection)
-        {
-            prefix = _armorPrefixes[_random.Next(_armorPrefixes.Length)];
-            typeName = item.GetType().Name;
-            suffix = _armorSuffixes[_random.Next(_armorSuffixes.Length)];
+            case "Weapon":
+                prefix = WeaponPrefixes[Random.Next(WeaponPrefixes.Length)];
+                suffix = WeaponSuffixes[Random.Next(WeaponSuffixes.Length)];
+                break;
+            case "Protection":
+                prefix = ArmorPrefixes[Random.Next(ArmorPrefixes.Length)];
+                suffix = ArmorSuffixes[Random.Next(ArmorSuffixes.Length)];
+                break;
         }
 
-        return $"{prefix} {typeName} {suffix}";
+        return $"{prefix} {itemName} {suffix}";
     }
 }

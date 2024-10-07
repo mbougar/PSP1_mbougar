@@ -2,6 +2,7 @@ using PSP1.Creatures;
 using PSP1.Creatures.Items.Protections;
 using PSP1.Creatures.Items.Weapons;
 using JetBrains.Annotations;
+using PSP1.Creatures.Items.Perks;
 
 namespace PSP1.Tests;
 
@@ -83,5 +84,14 @@ public class CharacterTest: IDisposable
         Assert.Equal(95, _character.CurrentHitPoints);
         _character.Heal(10);
         Assert.Equal(100, _character.CurrentHitPoints);
+    }
+    
+    [Fact]
+    public void MinionTest()
+    {
+        // test minions
+        Assert.Empty(_character.Minions);
+        _character.AddItem(new Axe(Perks.PerkSummonMinionApply));
+        Assert.Single(_character.Minions);
     }
 }

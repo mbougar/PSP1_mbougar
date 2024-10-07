@@ -1,24 +1,22 @@
+using PSP1.Creatures.Items.Perks;
+
 namespace PSP1.Creatures.Items.Weapons;
 
-public abstract class Weapon : IItem
+public abstract class Weapon(string name, int damage, ItemPerkDelegate? applyPerk = null, ItemPerkDelegate? cancelPerk = null) : IItem
 {
-    public string Name { get; set; }
-    private int Damage { get; set; }
-
-    public Weapon(string name, int damage)
-    {
-        Name = name;
-        Damage = damage;
-    }
+    private string Name { get; init; } = name;
+    private int Damage { get; set; } = damage;
 
     public void ApplyItemBuff(Character character)
     {
         character.BaseDamage += Damage;
+        applyPerk?.Invoke(character);
     }
     
     public void CancelItemBuff(Character character)
     {
         character.BaseDamage -= Damage;
+        cancelPerk?.Invoke(character);
     }
 
     public int GetDamage()

@@ -27,3 +27,4 @@ C:\Users\Manuel\RiderProjects\PSP1_mbougar\PSP1\obj\Debug\net8.0\refint\PSP1.dll
 C:\Users\Manuel\RiderProjects\PSP1_mbougar\PSP1\obj\Debug\net8.0\PSP1.pdb
 C:\Users\Manuel\RiderProjects\PSP1_mbougar\PSP1\obj\Debug\net8.0\PSP1.genruntimeconfig.cache
 C:\Users\Manuel\RiderProjects\PSP1_mbougar\PSP1\obj\Debug\net8.0\ref\PSP1.dll
+C:\Users\manal\RiderProjects\PSP1\PSP1\obj\Debug\net8.0\PSP1.sourcelink.json
