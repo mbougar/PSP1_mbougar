@@ -1,6 +1,6 @@
 # Diagrama UML de un Sistema de Personajes y Objetos
 
-![Este diagrama de clases UML representa un sistema de gestión de personajes, minions (esbirros), armas, protección y objetos en un juego. A continuación se explican los diferentes componentes y relaciones entre ellos](PSP1_UML.png)
+![Este diagrama de clases UML representa un sistema de gestión de personajes, minions (esbirros), armas, protección y objetos en un juego. A continuación se explican los diferentes componentes y relaciones entre ellos](PSP1_UML.svg)
 
 ## 1. Clases principales
 ### Character (Personaje)
